@@ -1,4 +1,5 @@
- // t.c=O(n)
+//Approach 1:Making deep of whole list and compare 
+// t.c=O(n)
 //  s.c=O(n)
 class Solution {
     public ListNode reverseList(ListNode head) {
@@ -37,5 +38,45 @@ class Solution {
             t2 = t2.next;
         }
         return true;
+    }
+}
+
+
+
+
+//Approach 2:Reverse second of list and compare 
+// T.c :O(n)
+//S.c :O(1)
+class Solution {
+  
+    public ListNode reverseList(ListNode head) {
+        if(head==null || head.next==null){
+            return head;
+        }
+        ListNode last=reverseList(head.next);
+        head.next.next=head;
+        head.next=null;
+        return last;
+    }
+ 
+    public boolean isPalindrome(ListNode head) {
+        if(head.next==null) return true;
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        ListNode newHead=reverseList(slow);
+        ListNode t1=head;
+        ListNode t2=newHead;
+        while(t2!=null){
+            if(t1.val!=t2.val) return false;
+            t1=t1.next;
+            t2=t2.next;
+        }
+        return true;
+
+        
     }
 }
