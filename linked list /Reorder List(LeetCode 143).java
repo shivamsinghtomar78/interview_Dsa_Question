@@ -38,3 +38,29 @@ class Solution {
         
     }
 }
+
+//Approach -2:Using recursion 
+// T.c :O(n);
+// S.c :O(1);
+class Solution {
+    ListNode curr;
+    void solve (ListNode head){
+        if(head==null) return ;
+        solve(head.next);
+        ListNode temp=curr.next;
+        if(temp==null) return;
+        if(curr==head){
+            head.next=null;
+            return;
+        }
+        curr.next=head;
+        head.next=(temp==head)?null:temp;
+        curr=temp;
+
+    }
+    public void reorderList(ListNode head) {
+        curr=head;
+        solve(curr);
+        
+    }
+}
