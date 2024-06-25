@@ -1,4 +1,4 @@
-//Approach -1:
+//Approach -1:using dummy node
 // T.c :O(n);
 //S.c :O(n);
 
