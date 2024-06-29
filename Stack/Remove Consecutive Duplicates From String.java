@@ -1,7 +1,16 @@
-//Approach-1: store all non-duplicate in stack and convert in StringBuilder then reverse stringBuilder then convert stringBuilder in string
-// T.c:O(n);
-// S.c :O(n);
-// Problem link: https://www.naukri.com/code360/problems/remove-consecutive-duplicates-from-string_630473
+ /* Approach-1: store all non-duplicate in stack and convert in StringBuilder then reverse stringBuilder then convert stringBuilder in string
+  T.c:O(n);
+  S.c :O(n);
+  Problem link: https://www.naukri.com/code360/problems/remove-consecutive-duplicates-from-string_630473
+  Algo:1. It uses a Stack to process the characters.
+2. It iterates through the input string, character by character.
+3. For each character, it checks if the stack is empty or the current character is different from the top of the stack.
+4. If either condition is true, it pushes the character onto the stack.
+5. After processing all characters, it pops the characters from the stack and appends them to a StringBuilder.
+6. Finally, it reverses the StringBuilder and returns the resulting string.
+ */
+
+
  
 import java.util.Stack;
 
