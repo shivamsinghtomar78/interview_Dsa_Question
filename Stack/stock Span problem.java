@@ -1,5 +1,6 @@
 /*Time Complexity: O(n)
-Space Complexity: O(n)*/
+Space Complexity: O(n)
+problem:https://www.geeksforgeeks.org/problems/stock-span-problem-1587115621/1*/
 
 
   class Solution {
