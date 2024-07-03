@@ -1,5 +1,5 @@
 /*
-Approach-1:
+Approach-1:Sort and select 4 element 
 Time complexity:O(nlogn)
 Space complexity:O(1) */
 
@@ -21,7 +21,7 @@ class Solution {
 
 
 /*
-Approach-2:
+Approach-2:  
 Time complexity:O(nlogn)
 Space complexity:O(1) */
 
