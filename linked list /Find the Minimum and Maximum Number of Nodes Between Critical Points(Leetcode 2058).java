@@ -82,3 +82,51 @@ class Solution {
         
     }
 }
+
+// Approach-3:Travel in whole list and store critical point and store distance in result
+// T.c:O(n);
+// S.c:O(1);
+
+class Solution {
+    public int[] nodesBetweenCriticalPoints(ListNode head) {
+       int []ans={-1,-1};
+        if(head.next.next==null) return ans;
+        ListNode t1=head;
+        ListNode mid=head.next;
+        ListNode t2=head.next.next;
+        ArrayList<Integer> list=new ArrayList<>();
+        int count=2;
+        while(t2!=null){
+            if(mid.val>t1.val && mid.val>t2.val){
+                 list.add(count);
+            }
+           else if(mid.val<t1.val && mid.val<t2.val){
+                 list.add(count);
+            }
+            count++;
+            t1=t1.next;
+            mid=mid.next;
+            t2=t2.next;
+        }
+         int n=list.size();
+          if(n==1){
+            ans[0]=-1;
+            ans[1]=-1; 
+          }
+          else if(n==2){
+            ans[0]=list.get(1)-list.get(0);
+            ans[1]=list.get(1)-list.get(0);
+          }
+          else if(n>2){
+            int mn=Integer.MAX_VALUE;
+            for(int i=1;i<n;i++){
+                mn=Math.min(mn,list.get(i)-list.get(i-1));
+            }
+            ans[0]=mn;
+            ans[1]=list.get(n-1)-list.get(0);
+
+          }
+        return ans;
+        
+    }
+}
