@@ -83,7 +83,7 @@ class Solution {
     }
 }
 
-// Approach-3:Travel in whole list and store critical point and store distance in result
+// Approach-3: 
 // T.c:O(n);
 // S.c:O(1);
 
@@ -97,10 +97,7 @@ class Solution {
         ArrayList<Integer> list=new ArrayList<>();
         int count=2;
         while(t2!=null){
-            if(mid.val>t1.val && mid.val>t2.val){
-                 list.add(count);
-            }
-           else if(mid.val<t1.val && mid.val<t2.val){
+            if((mid.val>t1.val && mid.val>t2.val) || (mid.val<t1.val && mid.val<t2.val)) {
                  list.add(count);
             }
             count++;
