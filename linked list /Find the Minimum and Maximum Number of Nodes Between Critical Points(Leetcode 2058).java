@@ -90,7 +90,7 @@ class Solution {
 class Solution {
     public int[] nodesBetweenCriticalPoints(ListNode head) {
        int []ans={-1,-1};
-        if(head.next.next==null) return ans;
+        if(head.next.next==null || head.next==null) return ans;
         ListNode t1=head;
         ListNode mid=head.next;
         ListNode t2=head.next.next;
