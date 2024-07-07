@@ -19,3 +19,22 @@ Space complexity:O(1)
     }
 }
 
+/*
+Approach-2:Editorial
+Time complexity :O(numBottles/numExchange−1)
+Space complexity:O(1)
+  */
+
+
+class Solution {
+    public int numWaterBottles(int numBottles, int numExchange) {
+        int consumed =0;
+        while(numBottles>=numExchange){
+            consumed+=numExchange;
+            numBottles-=numExchange;
+            numBottles+=1;
+        }
+        return consumed+numBottles;
+    }
+}
+
