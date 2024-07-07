@@ -21,7 +21,7 @@ Space complexity:O(1)
 
 /*
 Approach-2:Editorial
-Time complexity :O(numBottles/numExchange−1)
+Time complexity :O(numBottle/numexchange-1)
 Space complexity:O(1)
   */
 
