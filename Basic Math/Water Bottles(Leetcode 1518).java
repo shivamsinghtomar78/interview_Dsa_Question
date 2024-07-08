@@ -1,5 +1,5 @@
 /*
-Approach-1:brute force
+Approach-1:optimal solution
 Time complexity :O(Log(Numbottles))
 Space complexity:O(1)
   */
