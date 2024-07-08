@@ -20,7 +20,7 @@ class Solution {
     }
 }
 /*
-Approach-1:Using Deque
+Approach-1:Using ArrayList
 Time complexity :O(n^2);
 Space complexity:O(n); */
 class Solution {
