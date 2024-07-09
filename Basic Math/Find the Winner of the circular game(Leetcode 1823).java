@@ -38,3 +38,23 @@ class Solution {
         return arr.get(0);
     }
 }
+
+/*
+Approach-2:Using Recursion
+Time complexity :O(n);
+Space complexity:O(n); */
+
+class Solution {
+    public int solve(int n,int k){
+        if(n==1){
+            return 0;
+        }
+        return (solve(n-1,k)+k)%n;
+    }
+    public int findTheWinner(int n, int k) {
+        int ans=solve(n,k)+1;
+        return ans;
+        
+    }
+}
+
