@@ -1,5 +1,5 @@
 /*
-Approach-1 :Using one queue
+Approach-1 :Using one queue and push efficient 
 push:
 Time Complexity: O(1)
 Space Complexity: O(1)
@@ -53,7 +53,7 @@ class MyStack {
 
 
 /*
-Approach-2 :Using one queue
+Approach-2 :Using one queue and pop efficient 
 push:
 Time Complexity: O(n)
 Space Complexity: O(1)
