@@ -40,7 +40,7 @@ class Solution {
 }
 
 /*
-Approach-2:Using Recursion
+Approach-3:Using Recursion
 Time complexity :O(n);
 Space complexity:O(n); */
 
@@ -55,6 +55,22 @@ class Solution {
         int ans=solve(n,k)+1;
         return ans;
         
+    }
+}
+/*
+Approach-4:iterative 
+Time complexity :O(n);
+Space complexity:O(1); */
+
+class Solution {
+
+    public int findTheWinner(int n, int k) {
+        int ans = 0;
+        for (int i = 2; i <= n; i++) {
+            ans = (ans + k) % i;
+        }
+        
+        return ans + 1;
     }
 }
 
