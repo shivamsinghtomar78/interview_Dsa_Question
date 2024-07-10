@@ -17,3 +17,27 @@ class Solution {
         return count;
     }
 }
+
+/*
+Approach-2:Using Stack 
+Time complexity:O(n);
+Space complexity:O(n)
+  */
+
+class Solution {
+    public int minOperations(String[] logs) {
+        Stack<String> st=new Stack<>();
+        for(String operation:logs){
+            if(operation.equals("../")){
+                if(st.size()>0) st.pop();
+            }
+            else if(operation.equals("./")){
+
+            }
+            else{
+                st.push(operation);
+            }
+        }
+        return st.size();
+    }
+}
