@@ -41,3 +41,25 @@ class Solution {
         return 1+Math.max(lh,rh);
     }
 }
+/*
+Approach-3:DFS(OPtimal)
+Time complexity:O(n);
+Space complexity:O(n); */
+
+
+class Solution {
+    static int maxDia;
+    public int diameterOfBinaryTree(TreeNode root) {
+        maxDia=0;
+        levels(root);
+        return maxDia; 
+    }
+    public int levels(TreeNode root){
+        if(root==null) return 0;
+        int a=levels(root.left);
+        int b=levels(root.right);
+        int dia=a+b;
+        maxDia=Math.max(dia,maxDia);
+        return 1+Math.max(a,b);
+    }
+}
