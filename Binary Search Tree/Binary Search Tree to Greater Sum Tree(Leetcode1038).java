@@ -1,7 +1,7 @@
 /*
 Approach-1:DFS
-Time complexity:O();
-Space complexity:O();
+Time Complexity: O(n)
+Space Complexity: O(n)
 */
 
 class Solution {
