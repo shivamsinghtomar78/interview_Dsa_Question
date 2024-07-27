@@ -22,3 +22,26 @@ class Solution {
         inorder(root.right,arr);
     }
 }
+
+/*
+Approach-2:DFS
+Time Complexity: O(n)
+Space Complexity: O(n)
+*/
+
+class Solution {
+    static int sum;
+    public TreeNode bstToGst(TreeNode root) {
+        sum=0;
+        reverseInorder(root);
+        return root;
+    }
+    public void reverseInorder(TreeNode root){
+        if(root==null) return;
+        reverseInorder(root.right);
+        root.val+=sum;
+        sum=root.val;
+        reverseInorder(root.left);
+    }
+
+}
