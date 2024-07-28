@@ -1,7 +1,7 @@
 /*
 Approach-1:Binary search
-Time complexity:O();
-Space complexity:O();  */
+Time complexity:O(N);
+Space complexity:O(N);  */
 
 class Solution {
     public TreeNode helper (int[] arr,int lo,int hi){
