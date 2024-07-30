@@ -20,7 +20,7 @@ class Solution {
 
 
 /*
-Approach-2:Brute force ;
+Approach-2:HashSet  ;
 Time complexity:O(N);
 Space complexity:O(N);
 */
