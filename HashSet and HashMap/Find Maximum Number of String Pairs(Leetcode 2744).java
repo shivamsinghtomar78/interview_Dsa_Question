@@ -33,6 +33,7 @@ class Solution {
             String rev=reverse(words[i]);
             if(set.contains(rev)){
                 count++;
+                set.remove(rev);
             }
             else set.add(words[i]);
         } 
