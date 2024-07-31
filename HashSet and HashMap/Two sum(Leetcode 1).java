@@ -19,7 +19,7 @@ class Solution {
 
 
 /*
-Approach-1:HashMap
+Approach-1: nested Loop(Brute force)
 Time complexity:O(N^2);
 Space complexity:O(1); */
 
