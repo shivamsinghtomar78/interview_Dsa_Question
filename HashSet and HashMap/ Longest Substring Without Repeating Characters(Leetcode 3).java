@@ -1,5 +1,5 @@
 /*
-Approach-1:HashSet and using ArrayList;
+Approach-1:HashMap
 Time complexity:O(N);
 Space complexity:O(N); */
 
