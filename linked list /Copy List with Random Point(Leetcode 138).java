@@ -63,3 +63,42 @@ class Solution {
 
     }
 }
+
+/*
+Approach-2:HashMap
+Time complexity:O(N);
+Space complexity:O(N); */
+
+ class Solution {
+    public Node copyRandomList(Node head) {
+        if(head==null) return null;
+        // making deep copy of list
+        Node head2=new Node (head.val);
+        Node temp2=head2;
+        Node temp=head.next;
+        while(temp!=null){
+            Node dup=new Node (temp.val);
+            temp2.next=dup;
+            temp2=dup;
+            temp=temp.next;
+        }
+        // Storing node in hashmap
+        HashMap<Node,Node> map=new HashMap<>();
+         temp2=head2;
+         temp=head;
+        while(temp!=null) {
+            map.put(temp,temp2);
+            temp=temp.next;
+            temp2=temp2.next;
+        }
+        // conneting random node
+        for(Node original:map.keySet()){
+            Node duplicate=map.get(original);
+            if(original.random!=null){
+                duplicate.random=map.get(original.random);
+            }
+        }
+        return head2;
+
+    }
+}
