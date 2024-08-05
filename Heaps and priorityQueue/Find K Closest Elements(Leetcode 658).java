@@ -1,7 +1,7 @@
 /*
 Approach-1:Max  Heap;
-Time complexity:O(NLogN);
-Space complexity:O(N); */
+Time complexity:O(NLogK);
+Space complexity:O(K); */
 
  class Solution {
         public List<Integer> findClosestElements(int[] arr, int k, int x) {
