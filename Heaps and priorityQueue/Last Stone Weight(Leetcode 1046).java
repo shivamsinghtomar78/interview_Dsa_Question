@@ -25,6 +25,7 @@ class Solution {
         if(pq.size()==0) return 0;
         return pq.remove();
     }
+}
 
 
     /*
