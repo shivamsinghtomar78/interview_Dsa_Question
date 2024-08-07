@@ -2,6 +2,7 @@
 Appraoch-1:using inorder and preorder traversal in reverse;
 Time complexity:O(N^2);
 Space complexity:O(N);
+Problem:https://www.geeksforgeeks.org/problems/bst-to-max-heap/1
 */
 
 class Solution
