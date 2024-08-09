@@ -1,6 +1,6 @@
 /*
 Approach-1:Prefix Sum;
-Time complexity:sumRange:O(n);
+Time complexity:O(n);
 Space complexity:O(1);
 */
 
