@@ -24,7 +24,6 @@ Approach-1:HashMap and prefix sum;
 Time complexity:O(n);
 Space complexity:O(n);
 */
-
 public class Solution {
     public int subarraySum(int[] nums, int k) {
         int count = 0, sum = 0;
