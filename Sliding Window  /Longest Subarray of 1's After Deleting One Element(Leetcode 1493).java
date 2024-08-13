@@ -20,3 +20,24 @@ class Solution {
         return len;
     }
 }
+/*
+Approach-2:sliding window(Optimal solution)
+Time Complexity: O(N)
+Space Complexity: O(1) */
+class Solution {
+    public int longestSubarray(int[] arr) {
+        int i=0,j=0;
+        int n=arr.length;
+        int last_zeroes_idx=-1;
+        int result=0;
+        while(j<n){
+            if(arr[j]==0){
+                i= last_zeroes_idx+1;
+                 last_zeroes_idx=j;
+            }
+            result=Math.max(result,j-i);
+            j++;
+        }
+        return result;
+    }
+}
