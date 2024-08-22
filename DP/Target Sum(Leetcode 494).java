@@ -40,8 +40,8 @@ class Solution {
 }
 /*
 Approach-3:Recurrsion;
-Time complexity:O(n*taregt);
-Space complexity:O(n*target);
+Time complexity:O(n * (2 * sum + 1));
+Space complexity:O(n * (2 * sum + 1));
 */
 
 class Solution {
