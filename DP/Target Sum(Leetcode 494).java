@@ -39,7 +39,7 @@ class Solution {
     }
 }
 /*
-Approach-3:Recurrsion;
+Approach-3:Recurrsion and memoization;
 Time complexity:O(n * (2 * sum + 1));
 Space complexity:O(n * (2 * sum + 1));
 */
@@ -67,3 +67,39 @@ class Solution {
          return dp[i][res+sum]=add+sub;
     }
 }
+/*
+Approach-4:Recurrsion and memoization with hashMap;
+Time complexity:O(n * (2 * sum + 1));
+Space complexity:O(n * (2 * sum + 1));
+*/
+class Solution {
+    int sum;
+    
+    public int findTargetSumWays(int[] arr, int target) {
+        sum = 0;
+        for (int ele : arr) sum += ele;
+        Map<String, Integer> memo = new HashMap<>();
+        return ways(0, arr, 0, target, memo);
+    }
+
+    public int ways(int i, int[] arr, int res, int target, Map<String, Integer> memo) {
+        if (i == arr.length) {
+            return res == target ? 1 : 0;
+        }
+        
+        String key = i + "," + res;
+        
+        if (memo.containsKey(key)) {
+            return memo.get(key);
+        }
+        
+        int add = ways(i + 1, arr, res + arr[i], target, memo);
+        int sub = ways(i + 1, arr, res - arr[i], target, memo);
+        
+        memo.put(key, add + sub);
+        
+        return add + sub;
+    }
+}
+
+
