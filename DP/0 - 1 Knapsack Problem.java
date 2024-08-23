@@ -41,3 +41,30 @@ class Solution {
         return dp[i][c]= Math.max(pick,skip);
     }
 }
+
+/*
+Approach-3:Bottom-up dp or iterative dp or tabulation dp;
+Time complexity:O(n);
+Space complexity:O(n);
+*/
+
+class Solution {
+    // Function to return max value that can be put in knapsack of capacity W.
+    static int knapSack(int c, int wt[], int val[]) {
+       int n=wt.length;
+        int [][] dp=new int[n][c+1];
+        for (int i = 0; i <n ; i++){
+            for (int j= 0; j <c+1; j++) {
+                int skip=(i>0) ?dp[i-1][j]:0;
+                if(wt[i]>j)  dp[i][j]=skip;
+                else{
+                    int pick=val[i];
+                     pick+=(i>0)?dp[i-1][j-wt[i]]:0;
+                     dp[i][j]=Math.max(pick,skip);
+                }
+
+            }
+        }
+        return dp[n-1][c];
+    }
+}
