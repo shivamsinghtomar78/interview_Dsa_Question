@@ -1,7 +1,7 @@
 /*
 Approach-1:Recursion + Memoization(DP);
-Time complexity:O(n);
-Space complexity:O(n);
+Time complexity:O(m*n);
+Space complexity:O(m*n);
 */
 
 class Solution {
