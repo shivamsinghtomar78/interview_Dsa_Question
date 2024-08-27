@@ -26,3 +26,30 @@ class Solution {
         return s.length()-lcs(m-1, n-1, a, b, dp);  
     }
 }
+
+/*
+Approach-2:Bottom-up dp or iterative dp or tabulation dp;
+Time complexity:O(n^2);
+Space complexity:O(n^2);
+*/
+class Solution {
+    public int minInsertions(String s) {
+         String a = s;
+        String b = new StringBuilder(s).reverse().toString();
+        int m = a.length();
+        int n = b.length();
+        int[][] dp = new int[m+1][n+1];
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                
+                if (a.charAt(i-1) == b.charAt(j-1)) {
+                    dp[i][j] = 1 + dp[i-1][j-1];
+                } else {
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+        }
+
+        return s.length()- dp[m][n];  
+    }
+}
