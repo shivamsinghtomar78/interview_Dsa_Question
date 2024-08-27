@@ -53,3 +53,32 @@ class Solution {
         return s.length()- dp[m][n];  
     }
 }
+
+/*
+Approach-3:Bottom-up dp or iterative dp or tabulation dp;
+Time complexity:O(n^2);
+Space complexity:O(n);
+*/
+class Solution {
+    public int minInsertions(String s) {
+        String a = s;
+        String b = new StringBuilder(s).reverse().toString();
+        int m = a.length();
+        int n = b.length();
+        int[][] dp = new int[2][n+1];
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                
+                if (a.charAt(i-1) == b.charAt(j-1)) {
+                    dp[1][j] = 1 + dp[0][j-1];
+                } else {
+                    dp[1][j] = Math.max(dp[0][j], dp[1][j-1]);
+                }
+            }
+            // copy the first row to 0th row for next time
+            for(int j=0;j<=n;j++) dp[0][j]=dp[1][j];
+        }
+
+        return s.length()- dp[1][n]; 
+    }
+}
