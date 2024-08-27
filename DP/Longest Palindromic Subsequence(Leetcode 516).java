@@ -1,7 +1,7 @@
 /*
 Approach-1:Recursion + Memoization(DP);
-Time complexity:O(m*n);
-Space complexity:O(m*n);
+Time complexity:O(n^2);
+Space complexity:O(n^2);
 */
 class Solution {
     public int lcs(int i, int j, String a, String b, int[][] dp) { 
@@ -29,8 +29,8 @@ class Solution {
 
 /*
 Approach-2:Bottom-up dp or iterative dp or tabulation dp;
-Time complexity:O(m*n);
-Space complexity:O(m*n);
+Time complexity:O(n^2);
+Space complexity:O(n^2);
 */
 class Solution {
     public int longestPalindromeSubseq(String s) {
@@ -57,7 +57,7 @@ class Solution {
 
 /*
 Approach-3:Bottom-up dp or iterative dp or tabulation dp;
-Time complexity:O(m*n);
+Time complexity:O(n^2);
 Space complexity:O(n);
 */
 
