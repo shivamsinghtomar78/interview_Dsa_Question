@@ -1,5 +1,5 @@
 /*
-Approach-2:Bottom-up dp or iterative dp or tabulation dp;
+Approach-1:Bottom-up dp or iterative dp or tabulation dp;
 Time complexity:O(n^2);
 Space complexity:O(n);
 */
