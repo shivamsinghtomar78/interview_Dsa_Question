@@ -1,5 +1,5 @@
 /*
-Approach: poiners;
+Approach: brute force
 Time complexity:O(N);
 Space complexity:O(1); */
 class Solution {
@@ -34,5 +34,29 @@ class Solution {
         }
         
         return count >= x;
+    }
+}
+
+/*
+Approach:  optimised sol
+Time complexity:O(N);
+Space complexity:O(1); */
+
+class Solution {
+    public boolean canPlaceFlowers(int[] flowerbed, int x) {
+        int n=flowerbed.length;
+        if(x==0) return true;
+        for(int i=0;i<n;i++){
+            if(flowerbed[i]==0){
+                boolean leftEmpty= (i==0) || (flowerbed[i-1]==0);
+                boolean rightEmpty=(i==n-1) || (flowerbed[i+1]==0);
+                if(leftEmpty && rightEmpty){
+                    flowerbed[i]=1;
+                    x--;
+                    if(x==0) return true;
+                }
+            }
+        }
+        return false;
     }
 }
