@@ -1,5 +1,5 @@
 /*
-Approach: Three poiner;
+Approach:  Math
 Time complexity:O(M+N);
 Space complexity:O(M+N); */
 
