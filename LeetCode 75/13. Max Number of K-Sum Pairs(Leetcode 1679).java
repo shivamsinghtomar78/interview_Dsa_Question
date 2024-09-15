@@ -23,7 +23,7 @@ class Solution {
 
 /*
 Approach: two pointer and sorting  ;
-Time complexity:O(N);
+Time complexity:O(N*logN);
 Space complexity:O(1); */
 
 class Solution {
