@@ -1,5 +1,5 @@
 /*
-Approach: HashSet(Brute force) ;
+Approach: HashSet  ;
 Time complexity:O(N);
 Space complexity:O(N); */
 
