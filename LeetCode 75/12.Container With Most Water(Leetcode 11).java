@@ -23,3 +23,9 @@ class Solution {
         return maxWater;
     }
 }
+/*
+hm ussko aage peeche move krege jo chota hoga 
+jo bada hoga ussko wahi rakhege kyu hm greedy approach use kr rhe hai 
+isliye bade ko rakhege 
+
+*/
