@@ -47,3 +47,12 @@ class Solution {
         return head;
     }
 }
+
+
+
+/*
+Approach: LinkedList
+Time complexity:O(N);
+Space complexity:O(1); */
+
+
