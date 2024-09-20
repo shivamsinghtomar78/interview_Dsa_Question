@@ -21,3 +21,29 @@ class Solution {
         return head;
     }
 }
+
+/*
+Approach: LinkedList
+Time complexity:O(N);
+Space complexity:O(1); */
+
+class Solution {
+    public ListNode deleteMiddle(ListNode head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+        ListNode prev = null;
+        while (fast != null && fast.next != null) {
+            prev = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+
+        }
+        if (prev != null) {
+            prev.next = slow.next;
+        }
+        return head;
+    }
+}
