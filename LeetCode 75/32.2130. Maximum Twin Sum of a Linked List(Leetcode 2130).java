@@ -22,3 +22,28 @@ class Solution {
         return mx;
     }
 }
+
+/*
+Approach: LinkedList and Stack;
+Time complexity:O(N);
+Space complexity:O(N); */
+
+class Solution {
+    public int pairSum(ListNode head) {
+        Stack<Integer> st=new Stack<>();
+        ListNode temp=head;
+        while(temp!=null){
+            st.push(temp.val);
+            temp=temp.next;
+        }
+        int n=st.size();
+        int mx=Integer.MIN_VALUE;
+        temp=head;
+        for(int i=0;i<n/2;i++){
+            int p=st.pop();
+            mx=Math.max(mx,p+temp.val);
+            temp=temp.next;
+        }
+        return mx;
+    }
+}
