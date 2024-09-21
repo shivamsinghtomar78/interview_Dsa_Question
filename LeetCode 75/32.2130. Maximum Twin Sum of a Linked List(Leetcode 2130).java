@@ -47,3 +47,45 @@ class Solution {
         return mx;
     }
 }
+
+/*
+Approach: LinkedList ;
+Time complexity:O(N);
+Space complexity:O(1); */
+
+class Solution {
+    public int pairSum(ListNode head) {
+        // Find the middle of the list using slow and fast pointers
+        ListNode slow = head;
+        ListNode fast = head;
+        
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        
+        // Reverse the second half of the list
+        ListNode prev = null;
+        ListNode mid = slow;
+        
+        while (mid != null) {
+            ListNode nextNode = mid.next;
+            mid.next = prev;
+            prev = mid;
+            mid = nextNode;
+        }
+        
+        // Calculate the maximum twin sum
+        ListNode curr = head;
+        int result = 0;
+        
+        while (prev != null) {
+            result = Math.max(result, curr.val + prev.val);
+            curr = curr.next;
+            prev = prev.next;
+        }
+        
+        return result;
+    }
+}
+
