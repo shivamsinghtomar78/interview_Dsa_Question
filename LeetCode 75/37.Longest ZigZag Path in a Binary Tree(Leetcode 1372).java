@@ -26,3 +26,29 @@ class Solution {
         return pathLength;
     }
 }
+
+/*
+Approach: Binary tree;
+Time complexity:O(N);
+Space complexity:O(H); */
+
+
+class Solution {
+    private int maxPath = 0;
+    
+    public int longestZigZag(TreeNode root) {
+        solve(root, 0, 0);
+        return maxPath;
+    }
+    
+    private void solve(TreeNode root, int left, int right) {
+        if (root == null) {
+            return;
+        }
+        
+        maxPath = Math.max(maxPath, Math.max(left, right));
+        
+        solve(root.left, right + 1, 0);
+        solve(root.right, 0, left + 1);
+    }
+}
