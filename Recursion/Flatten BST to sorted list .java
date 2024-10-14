@@ -26,3 +26,33 @@ class Solution {
       
     }
 }
+
+
+
+//T.C : O(n)
+//S.C : AUxiliary Space is O(1) and Stack Space due to recursion is O(n)
+
+class Solution {
+    public Node flattenBST(Node root) {
+        if (root == null) {
+            return null;
+        }
+
+        Node head = flattenBST(root.left);
+        root.left = null;
+        root.right = flattenBST(root.right);
+
+        if (head != null) {
+            Node temp = head;
+            while (temp.right != null) {
+                temp = temp.right;
+            }
+            temp.right = root;
+        } else {
+            // If head is null, root becomes the head
+            head = root;
+        }
+
+        return head;
+    }
+}
