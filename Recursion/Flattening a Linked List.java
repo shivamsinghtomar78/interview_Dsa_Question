@@ -39,3 +39,31 @@ class Solution {
     }
 
 }
+
+/*
+T.C : O(N*N*M);
+S.C : Auziliary Space = O(1) and O(N*M) */
+
+class Solution {
+    // Function to flatten a linked list
+    Node flatten(Node head) {
+        if(head==null) return null;
+        Node temp=flatten (head.next);
+        return mergeList(head,temp);
+    }
+    public Node mergeList(Node head1,Node head2){
+        if(head1==null) return head2;
+        if(head2==null) return head1;
+        Node result ;
+        if(head1.data>head2.data){
+            result=head2;
+            result.bottom=mergeList(head1,head2.bottom);
+        }
+        else {
+            result=head1;
+            result.bottom=mergeList(head1.bottom,head2);
+        }
+        return result;
+    }
+}
+    
