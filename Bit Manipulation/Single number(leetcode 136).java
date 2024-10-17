@@ -40,3 +40,20 @@ class Solution {
          return nums[nums.length-1];
     }
 }
+
+
+/*
+Approach:Sorting  ;
+Time complexity:O(N);
+Space complexity:O(1); */
+
+
+class Solution {
+    public int singleNumber(int[] nums) {
+        int ans=0;
+        for(int ele:nums){
+            ans^=ele;
+        }
+        return ans;
+    }
+}
