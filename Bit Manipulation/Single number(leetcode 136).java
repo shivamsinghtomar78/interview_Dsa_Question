@@ -1,5 +1,5 @@
 /*
-Approach:Brute force ;
+Approach:HashMap ;
 Time complexity:O(N);
 Space complexity:O(N); */
 
@@ -20,5 +20,23 @@ class Solution {
             }
         }
         return 0;
+    }
+}
+
+
+/*
+Approach:Sorting  ;
+Time complexity:O(NlogN);
+Space complexity:O(logN); */
+
+class Solution {
+    public int singleNumber(int[] nums) {
+         Arrays.sort(nums);
+         int i=0;
+         while(i<nums.length-1){
+            if(nums[i]!=nums[i+1]) return nums[i];
+            i+=2;
+         }
+         return nums[nums.length-1];
     }
 }
