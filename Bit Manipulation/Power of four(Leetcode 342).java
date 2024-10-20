@@ -32,7 +32,7 @@ class Solution {
         return ((n&(n-1))==0) && isPerfectSquare(n);
     }
     public boolean isPerfectSquare(int n){
-        double root=Math.sqrt(n);
+        int root=(int)Math.sqrt(n);
         return root*root==n;
     }
 }
