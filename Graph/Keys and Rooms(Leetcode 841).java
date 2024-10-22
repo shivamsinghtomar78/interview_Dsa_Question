@@ -1,6 +1,6 @@
 /*
 Appraoch:using BFS  ;
-Time Complexity:O(V+E);
+Time Complexity:O(V+E); where 𝑉 ,V is the number of rooms and 𝐸 ,E is the total number of keys (edges).
 Space Complexity:O(N)
 
   */
