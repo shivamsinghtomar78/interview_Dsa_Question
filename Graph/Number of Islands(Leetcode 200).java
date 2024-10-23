@@ -73,3 +73,48 @@ class Solution {
         }
     }
 }
+
+
+
+/*
+Appraoch:using DFS ;
+Time Complexity: O(M*N)
+Space Complexity:O(M*N)
+
+  */
+
+class Solution {
+    public int numIslands(char[][] grid) {
+        int m=grid.length;
+        int n=grid[0].length;
+        boolean[][] vis=new boolean[m][n];
+        int count=0;
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(grid[i][j]=='1' && vis[i][j]==false){
+                    dfs(i,j,grid,vis);
+                    count++;
+                }
+            }
+        }
+        return count;   
+    }
+    private void dfs(int i,int j,char[][] grid, boolean[][] vis){
+        int m=grid.length;
+        int n=grid[0].length;
+        vis[i][j]=true;
+        // Top
+        if(i-1>=0 && grid[i-1][j]=='1' && vis[i-1][j]==false) dfs(i-1,j,grid,vis);
+
+        //left
+        if(j-1>=0 && grid[i][j-1]=='1' && vis[i][j-1]==false) dfs(i,j-1,grid,vis);
+
+        // bottom
+        if(i+1<m && grid[i+1][j]=='1' && vis[i+1][j]==false) dfs(i+1,j,grid,vis);
+
+        //right
+        if(j+1<n && grid[i][j+1]=='1' && vis[i][j+1]==false) dfs(i,j+1,grid,vis);
+    }
+    
+    
+}
