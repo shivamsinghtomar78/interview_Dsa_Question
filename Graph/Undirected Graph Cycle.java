@@ -40,3 +40,58 @@ class Solution {
         return false;
     }
 }
+
+
+
+/*
+Aprroach:Using DFS;
+Time Complexity:O(V+E);
+Space Complexity:O(V);
+Question Link : https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1
+*/
+
+class Solution {
+    class Pair {
+        int ele;
+        int parent;
+        Pair(int ele, int parent) {
+            this.ele = ele;
+            this.parent = parent;
+        }
+    }
+    
+    public boolean isCycle(ArrayList<ArrayList<Integer>> adj) {
+        int n = adj.size();
+        boolean[] visited = new boolean[n];
+        
+        for(int i = 0; i < n; i++) {
+            if(!visited[i] && bfs(adj, i, visited)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    private boolean bfs(ArrayList<ArrayList<Integer>> adj, int start, boolean[] visited) {
+        Queue<Pair> q = new LinkedList<>();
+        q.add(new Pair(start, -1));
+        visited[start] = true;
+        
+        while(!q.isEmpty()) {
+            Pair p = q.poll();
+            int curr = p.ele;
+            int parent = p.parent;
+            
+            for(int neighbor : adj.get(curr)) {
+                if(!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    q.add(new Pair(neighbor, curr));
+                }
+                else if(neighbor != parent) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
