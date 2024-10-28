@@ -34,7 +34,7 @@ class Solution {
         // ab stack mein daalo
 
 /*
-Aprroach:Using DFS;
+Aprroach:Using BFS;
 Time Complexity:O(V+E);
 Space Complexity:O(V);
 Question Link :https://www.geeksforgeeks.org/problems/topological-sort/1
