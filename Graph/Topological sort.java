@@ -32,6 +32,9 @@ class Solution {
         }
         
         // ab stack mein daalo
+	     st.push(u);
+    }
+}
 
 /*
 Aprroach:Using BFS;
